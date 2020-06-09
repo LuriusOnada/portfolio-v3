@@ -14,26 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Page d'accueil (et présentation) : 
-Route::get('/', 'IndexController@index')->name('index');
-/* "Page de contact" voir si nécessaire... 
-Route::get('/contact/', 'IndexController@contact')->name('contact');
-*/
-// User - Page de création de compte
-Route::get('/nouveau-compte', 'UserController@create')->name('new_account');
-Route::post('/creer-compte', 'UserController@store')->name('store_account');
-// User - Page de connexion
-Route::post('/connection', 'UserController@login')->name('login');
-// User - Page de gestion compte (Show modifier pour ne pas afficher l'id user dans url)
-Route::get('/compte', 'UserController@show')->name('user_account');
-
-/* User - All user 
-Route::get('/accounts', 'UserController@index')->name('all_account'); 
-*/
+Route::get('/', function(){
+    return view('index');
+})->name('index');
 
 // Project - Page de recherche
-Route::get('/mes-projets', 'ProjectController@index')->name('projects_list');
+Route::get('/mes-projets', function(){
+    return view('project_index');
+})->name('projects_list');
 // Project - Détails d'un projet (avec commentaire et possibilité réponse)
-Route::get('/projet/{url}', 'ProjectController@show')->name('project');
+Route::get('/projet/{url}', function(){
+    return view('project_show');
+})->name('project');
 
 
-// Pages des Mentions légales (voir combien seront nécessaire : Au moins une pour l'inscription)
+// Pages des Mentions légales (voir combien seront nécessaire -> Chercher pour les articles si textes de loi à indiquer)
+
+
+/* Plus de page de contact, directement des redirections et mailto dans footer */
+/* Suppression de la gestion des comptes (plus de commentaire sur le site) -> Fonctions inutiles voir dangereuse. + Réduction temp de travail */
