@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        // On entre les tags
+        $this->call(TagTableSeeder::class);
+
+        // Puis on entre un projet, suivi d'une liste avec nom des tags à rechercher dans bdd
+        $this->call(ProjectTableSeeder::class);
+
+        // Autre possibilité si nécessaire : créé un modèle pour pivot et seeder.
     }
 }

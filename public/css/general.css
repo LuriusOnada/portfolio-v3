@@ -1,0 +1,314 @@
+/* Code récup pour cacher scrollbar sans désactiver scroll */
+body::-webkit-scrollbar {
+	display: none;
+}
+body{
+	-ms-overflow-style: none;
+}
+
+/* Changement de coloration selection */
+::selection{
+	background-color: #222;
+	color: #fd0;
+}
+::-moz-selection {
+	background-color: #222;
+	color: #fd0;
+}
+
+body,html {
+	margin: 0;
+	font: bold 14px/1.4;
+	background: #666;
+}
+
+/* Bar de navigation du header */
+header {
+	top: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+}
+
+section,footer {
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+section {
+	min-height: 100vh;
+}
+
+nav {
+	display: inline-flex;
+	width: 100%;
+}
+header,nav {
+	background: transparent;
+}
+
+footer {
+	display: flex;
+	height: 25vh;
+	background-color: #000;
+}
+
+article{
+	box-sizing: border-box;
+    background: #fff;
+    margin: 0.5em;
+    box-shadow: inset 0 0 1.5em #222;
+    border-radius: 1em;
+}
+section.comments .comment, section.comments .comment .response, aside.search, section.login div.contain, section.user div.contain, section.register div.contain {
+	box-sizing: border-box;
+	background: #fff;
+    margin: 0.5em;
+    border: solid 1px #000;
+    box-shadow: inset 0 0 1em #222;
+    border-radius: 1em;
+}
+section.user div.contain, section.login div.contain,section.register div.contain{
+	margin: 2em;
+	align-self: center;
+}
+section.user div.contain div.form_contain, section.login div.contain div.form_contain,section.register div.contain div.form_contain{
+	margin: 2em;
+}
+
+section.user div.contain div.form_contain form, section.login div.contain div.form_contain form,section.register div.contain div.form_contain form{
+	display: grid;
+    text-align: left;
+    width: 80vw;
+}
+
+section.user div.contain div.form_contain form label, section.login div.contain div.form_contain form label,section.register div.contain div.form_contain form label{
+	color: #900;
+}
+section.user div.contain div.form_contain form input, section.login div.contain div.form_contain form input,section.register div.contain div.form_contain form input{
+	padding: 0.5em;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+section.login div.contain div.form_contain a {
+	display: grid;
+    text-align: left;
+    color: #900
+}
+
+section.user div.contain h2 {
+	text-align: left;
+	margin: 1em;
+}
+
+section.user div.contain div.avatar_contain {
+	display: flex;
+}
+
+/* Ne pas faire avec padding sinon effet un peu étrange sur le border radius */
+section.user div.contain div.avatar_contain img{
+	margin-top: 1em;
+}
+
+aside.search {
+	box-shadow: none;
+	background: #222;
+	color: #fff;
+	padding: 1em;
+}
+
+aside.search input {
+	width: 70%;
+	border: solid 1px #fff;
+	background: transparent;
+	padding: 0.2em;
+	font-size: 1em;
+	color: #fd0;
+}
+
+section.comments .comment form {
+	display: grid;
+	margin: 1em 2.5%;
+	width: 95%;
+}
+
+section.comments .comment textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 15vh;
+	box-sizing: border-box;
+	padding: 0.5em;
+	resize: none;
+}
+
+form label {
+	margin-bottom: 1em;
+}
+
+form button{
+	margin-top: 1em;
+	background: transparent;
+	border: solid 2px #000;
+	padding: 1em;
+	border-radius: 0.5em;
+}
+form button:hover {
+	background: #000;
+	color: #fd0;
+}
+
+
+
+section.comments {
+	min-height: 20vh;
+}
+
+
+
+section.story div img{
+	float: left;
+}
+
+section.story div p {
+	text-align: justify;
+}
+footer, footer a {
+	color: #fff;
+	text-decoration: none;
+}
+footer a {
+	justify-self: left;
+}
+footer ul{
+	list-style-type: none; 
+	margin: 0;
+}
+
+footer .container {
+	display: flex;
+	place-self: center;
+}
+footer .container .contact{
+	display: inline-grid;
+}
+
+.hidden {
+	display: none;
+}
+
+
+
+.header_link {
+	width: 100vw;
+	text-align: center;
+	background: #2228;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.15em;
+	padding: 10px 0;
+	position: relative;
+	color: #fff;
+}
+
+.two_head {
+	width: 50vw;
+}
+
+.right_lock {
+	margin-left: auto;
+}
+
+.header_link:after {
+	background: none repeat scroll 0 0 transparent;
+	bottom: 0;
+	content: "";
+	display: block;
+	height: 2px;
+	left: 50%;
+	position: absolute;
+	background: #fd0;
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
+}
+.header_link:hover:after { 
+	width: 100%; 
+	left: 0; 
+}
+
+#nav_menu {
+	display: none;
+}
+
+img.avatar {
+	border-radius: 50%;
+	object-fit: cover;
+	height: 3em;
+	width: 3em;
+}
+
+img.bigger{
+	height: 10em;
+	width: 10em;
+}
+
+.no-point {
+	list-style: none
+}
+
+.hide {
+	display: none;
+}
+
+a.opener {
+	color: #666;
+}
+
+a {
+	color: #c80;
+}
+
+a:hover {
+	color: #ff0;
+	background: #0008;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	text-decoration: underline;
+	color: #c87;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: max-content;
+	max-width: 300px;
+	background-color: #0008;
+	color: #ff0;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	top: 100%;
+	right: 0;
+	left: 50%;
+	margin-left: -150px;
+
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+@media only screen and (max-width: 600px) {
+	section.story div {
+		padding: 1em;
+		box-shadow: inset 0 0 0.9em #222;
+    	margin: 0;
+	}
+}

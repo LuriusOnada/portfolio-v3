@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Project;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,16 +21,23 @@ Route::get('/', function(){
 
 // Project - Page de recherche
 Route::get('/mes-projets', function(){
-    return view('project_index');
+    if(isset($_GET["recherche"]) && $_GET["recherche"] <> NULL)
+    {
+        $projects = Project::with('tags')->where('title', 'like', '%'.$_GET["recherche"].'%')->orWhere('resume', 'like', '%'.$_GET["recherche"].'%')->orderBy("updated_at")->get();
+    }
+    else {
+        $projects = Project::with('tags')->orderBy("updated_at")->get();
+    }
+
+    return view('project_index', compact("projects"));
 })->name('projects_list');
+
 // Project - Détails d'un projet (avec commentaire et possibilité réponse)
-Route::get('/projet/{url}', function(){
-    return view('project_show');
+Route::get('/projet/{url}', function($url){
+    $project = Project::where('url', $url)->with('tags')->first();
+
+    return view('project_show', compact("project"));
 })->name('project');
 
 
 // Pages des Mentions légales (voir combien seront nécessaire -> Chercher pour les articles si textes de loi à indiquer)
-
-
-/* Plus de page de contact, directement des redirections et mailto dans footer */
-/* Suppression de la gestion des comptes (plus de commentaire sur le site) -> Fonctions inutiles voir dangereuse. + Réduction temp de travail */
