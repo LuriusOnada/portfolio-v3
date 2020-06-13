@@ -8,6 +8,10 @@ section.welcome {
 	text-decoration: underline #900;
 }
 
+section.story {
+    display: flex;
+}
+
 section.story h2 {
 	text-decoration: underline #fd0;
 }

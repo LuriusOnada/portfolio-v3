@@ -205,11 +205,11 @@ footer .container .contact{
 	text-align: center;
 	background: #2228;
 	text-transform: uppercase;
-	text-decoration: none;
+	text-decoration: none!important;
 	letter-spacing: 0.15em;
 	padding: 10px 0;
 	position: relative;
-	color: #fff;
+	color: #fff!important;
 }
 
 .two_head {
@@ -262,17 +262,18 @@ img.bigger{
 }
 
 a.opener {
-	color: #666;
+	color: #666 !important;
+	text-decoration: none!important;
 }
 
 a {
 	color: #c80 !important;
-	text-decoration: underline !important;
+	text-decoration: underline;
 }
 
 a:hover {
 	color: #ff0 !important;
-	background: #0008;
+	background: #0008 !important;
 }
 
 .tooltip {
