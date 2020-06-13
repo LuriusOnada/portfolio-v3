@@ -36,7 +36,12 @@ Route::get('/mes-projets', function(){
 Route::get('/projet/{url}', function($url){
     $project = Project::where('url', $url)->with('tags')->first();
 
-    return view('project_show', compact("project"));
+    if(!empty($project)){
+        return view('project_show', compact("project"));
+    }
+    else {
+        return redirect(route('projects_list'));
+    }
 })->name('project');
 
 
