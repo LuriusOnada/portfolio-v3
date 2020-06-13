@@ -266,11 +266,12 @@ a.opener {
 }
 
 a {
-	color: #c80;
+	color: #c80 !important;
+	text-decoration: underline !important;
 }
 
 a:hover {
-	color: #ff0;
+	color: #ff0 !important;
 	background: #0008;
 }
 

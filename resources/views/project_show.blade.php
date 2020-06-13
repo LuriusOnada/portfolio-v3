@@ -12,7 +12,8 @@
 <article class="expand">
 	<h1 class="projet_title">{!! $project->title !!}</h1>
     <h4>{!! $project->resume !!}</h4>
-    <p>{!! $project->content !!}</p>
+	<p>{!! $project->content !!}</p>
+	<p>Merci d'avoir lu ces lignes et, qui que vous soyez, passez une bonne journée.<br>Cordialement, Louis Jean ARNAUD.</p>
 	<div class="foot">
 		@foreach($project->tags as $tag)
 		<span class="tag">{!!$tag->name!!}</span>

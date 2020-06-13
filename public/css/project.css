@@ -42,3 +42,8 @@ code {
 	background-color: #0006;
 	color: #ff0;
 }
+
+.img-limit {
+	max-width: 90%;
+	max-height: 40em;
+}
